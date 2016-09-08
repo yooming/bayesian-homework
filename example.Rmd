@@ -1,0 +1,25 @@
+---
+title: "Example1"
+author : yoominkyung
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##data
+```{r air}
+data("airquality")
+head(airquality)
+a=lm(Ozone~Wind,data = airquality)
+summary(a)
+```
+
+##plot
+
+```{r airplot}
+x=airquality$Wind
+y=airquality$Ozone
+plot(x,y)
+abline(a)
+```
